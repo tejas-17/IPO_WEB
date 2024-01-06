@@ -1,0 +1,37 @@
+/* Add this styling to your CSS file or within a style tag in your React component */
+.login-form {
+    background-color: #ba1964; /* Green background */
+    padding: 50px; /* Increase the padding for a larger container */
+    border: 1px solid #ca1f8e; /* Darker green border */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+
+
+.login-form label {
+    font-weight: bold;
+    color: #fff; /* White text color */
+}
+
+.login-form input {
+    margin-bottom: 20px;
+    padding: 15px; /* Increase the padding for input fields */
+    border: 1px solid #ced4da; /* Light gray border */
+    border-radius: 4px;
+}
+
+.login-form button {
+    padding: 15px 30px; /* Increase the padding for the button */
+    background-color: #007bff; /* Blue button color */
+    border: none;
+    border-radius: 4px;
+    color: #fff; /* White text color */
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition on hover */
+}
+
+.login-form button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}

@@ -1,0 +1,19 @@
+/* Registration.css */
+.registration-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 15px;
+    background-color: #007bff; /* Blue background color */
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    color: #fff; /* White text color */
+  }
+  
+  .registration-form label {
+    font-weight: bold;
+  }
+  
+  .registration-form button {
+    margin-top: 15px;
+  }
+  

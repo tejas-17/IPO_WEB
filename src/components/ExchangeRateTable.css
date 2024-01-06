@@ -1,0 +1,18 @@
+/* ExchangeRatesTable.css */
+.exchange-rates-table {
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  .exchange-rates-table th, .exchange-rates-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .exchange-rates-table th {
+    background-color: #f2f2f2;
+  }
+  
+  /* Add more styles as needed */
+  

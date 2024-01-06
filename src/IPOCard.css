@@ -1,0 +1,26 @@
+/* IPOCard.css */
+.ipo-card {
+    border: 1px solid #ddd;
+    padding: 15px;
+    margin: 10px;
+    cursor: pointer;
+    transition: box-shadow 0.3s, transform 0.3s;
+    background-color: #fff; /* Optional: Set a background color */
+    border-radius: 8px; /* Optional: Add border radius for rounded corners */
+    font-family: 'Your Custom Font', sans-serif; /* Specify your custom font */
+
+    /* Optional: Add subtle shade effect with a maroon color */
+    box-shadow: 0 4px 8px rgba(128, 0, 0, 0.1);
+}
+
+.ipo-card:hover {
+    box-shadow: 0 12px 24px rgba(128, 0, 0, 0.2);
+    transform: translateY(-5px);
+}
+
+.ipo-card h3 {
+    margin-bottom: 10px;
+    font-size: 18px; /* Optional: Adjust font size */
+}
+
+/* Add more styles as needed */

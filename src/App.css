@@ -1,38 +1,158 @@
-.App {
-  text-align: center;
+/* App.css */
+.app {
+  font-family: 'Arial', sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.text-right {
+ 
+  margin-left:0; /* Adjust the margin as needed */
+  font-size: 16px; /* Adjust the font size as needed */
+  /* Add more styles if necessary */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.dashboard-header {
+  background-color: green;
+  color: white;
+  padding: 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-left h1 {
+  margin-right: 20px;
+  margin: 0;
+}
+
+.header-right button {
+  background-color: #fff;
+  color: green;
+  padding: 8px 16px;
+  border: none;
+  cursor: pointer;
+}
+
+.dashboard {
+  display: flex;
+}
+
+.column {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  margin-right: 20px;
+}
+
+.calendar-container {
+  margin-bottom: 20px;
+}
+
+.forex-rates {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #fff;
+  margin-right: 30px;
+  margin-top: 20px;
+}
+
+.exchange-rates-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.exchange-rates-table th, .exchange-rates-table td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: left;
+}
+
+.exchange-rates-table th {
+  background-color: #f2f2f2;
+}
+
+.ipo-list {
+  flex-grow: 1;
+}
+
+.ipo-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.selected-ipo {
+  margin-top: 20px;
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: #fff;
+}
+/* App.css or your custom styling file */
+
+.landing-page-container {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  height: 100vh;
+  background-color: #f8f9fa; /* Off-white color */
 }
 
-.App-link {
-  color: #61dafb;
+.login-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff; /* White background */
+  padding: 40px; /* Increase padding for a larger container */
+  border-radius: 12px; /* Increase border-radius for rounded corners */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin: 20px; /* Increase margin for some spacing */
+  height: 100%; /* Set a fixed height for both containers */
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.login-container h2 {
+  background-color: #ffffff; /* White background */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
 }
+
+.registration-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff; /* White background */
+  padding: 40px; /* Increase padding for a larger container */
+  border-radius: 12px; /* Increase border-radius for rounded corners */
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+  margin: 20px; /* Increase margin for some spacing */
+  height: 100%; /* Set a fixed height for the container */
+}
+
+.registration-container h2 {
+  background-color: #ffffff; /* White background */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+}
+/* App.css or your custom styling file */
+/* App.css or your custom styling file */
+.ipo-list h2 {
+  background-color: #c8bfc1; /* Off-white background color */
+  padding: 10px; /* Adjust padding as needed */
+  border-radius: 8px; /* Optional: Add border radius for rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* 3D effect */
+  margin-bottom: 20px; /* Adjust margin as needed */
+  margin-top: 10px;
+  text-align: center; /* Center-align the text */
+  font-size: 24px; /* Optional: Adjust font size */
+  width: 20%; /* Adjust the width as needed */
+  margin: right 50%; /* Center the element horizontally */
+}
+
+/* Add more styles as needed */
+
+/* Add more styles as needed */

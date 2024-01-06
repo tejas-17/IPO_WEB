@@ -1,0 +1,50 @@
+/* Add this CSS to your project's stylesheet */
+.card {
+    border: 3px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    margin: 16px;
+    background-color: #fff;
+    max-width: 300px;
+    text-align: center;
+    transition: transform 0.2s ease-in-out;
+  }
+  
+  .card img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    /* Increase image size */
+    width: 100%;
+    max-height: 200px; /* Adjust the maximum height as needed */
+  }
+  
+  .card h2 {
+    font-size: 20px; /* Increase font size */
+    margin: 10px 0;
+    font-weight: bold; /* Make the title bold */
+  }
+  
+  .card p {
+    font-size: 14px;
+    color: #555;
+  }
+  
+  .card a {
+    display: block;
+    text-decoration: none;
+    color: #007bff;
+    margin-top: 10px;
+    font-weight: bold;
+  }
+  
+  .card a:hover {
+    text-decoration: underline;
+  }
+  
+  /* Add hover effect for cards */
+  .card:hover {
+    transform: translateY(-5px);
+  }
+  
