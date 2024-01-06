@@ -1,7 +1,7 @@
 // Login.js
 import React, { useState } from 'react';
 import { Button, Form, Container, Row, Col, Alert } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.min.css'; // Import Bootstrap CSS
+import 'bootstrap/dist/css/bootstrap.min.css';
 import './Login.css';
 
 const Login = ({ onLogin }) => {
@@ -10,6 +10,13 @@ const Login = ({ onLogin }) => {
   const [showAlert, setShowAlert] = useState(false);
 
   const handleLogin = () => {
+    // Check if either username or password is empty
+    if (!username || !password) {
+      // Display an alert or set an error state to handle empty fields
+      setShowAlert(true);
+      return;
+    }
+
     // Check if the user is admin
     if (username === 'admin' && password === 'admin') {
       onLogin(username, password);

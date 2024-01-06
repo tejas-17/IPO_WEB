@@ -2,7 +2,7 @@
 import React, { useState, useEffect } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
-import IPOCard from './IPOCard';
+import IPOCard from './components/IPOCard';
 import ExchangeRatesTable from './components/ExchangeRateTable';
 import Registration from './components/Registration';
 import Login from './components/Login';
@@ -98,7 +98,7 @@ const App = () => {
               </Col>
               <Col className="text-right">
                 {user ? (
-                  <Button variant="light" onClick={handleLogout}>
+                  <Button style={{marginLeft:1000}} variant="light" onClick={handleLogout}>
                     Logout
                   </Button>
                 ) : (
