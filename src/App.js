@@ -7,7 +7,7 @@ import ExchangeRatesTable from './components/ExchangeRateTable';
 import Registration from './components/Registration';
 import Login from './components/Login';
 import './App.css';
-import { Button, Container, Row, Col } from 'react-bootstrap';
+import { Button, Container, Row, Col, Spinner, Alert } from 'react-bootstrap';
 
 const App = () => {
   const [user, setUser] = useState(null);
@@ -18,6 +18,10 @@ const App = () => {
   const [loginPassword, setLoginPassword] = useState('');
   const [showLogin, setShowLogin] = useState(true);
   const [showRegister, setShowRegister] = useState(true);
+  const [loadingIPO, setLoadingIPO] = useState(false);
+  const [loadingForexRates, setLoadingForexRates] = useState(false);
+  const [errorIPO, setErrorIPO] = useState(null);
+  const [errorForexRates, setErrorForexRates] = useState(null);
 
   useEffect(() => {
     // Fetch IPO and forex rate data on component mount
@@ -61,23 +65,33 @@ const App = () => {
 
   const fetchIPOData = async () => {
     try {
+      setLoadingIPO(true);
+      setErrorIPO(null);
       // Replace with your actual API endpoint and token
       const response = await fetch('https://api.iex.cloud/v1/data/CORE/UPCOMING_IPOS/market?token=pk_783dcc2169924a7a9f17a4b0b13bca6c');
       const data = await response.json();
       setIpoData(data);
     } catch (error) {
       console.error('Error fetching IPO data:', error);
+      setErrorIPO('Error fetching IPO data. Please try again.');
+    } finally {
+      setLoadingIPO(false);
     }
   };
 
   const fetchForexRates = async () => {
     try {
+      setLoadingForexRates(true);
+      setErrorForexRates(null);
       // Replace with your actual API endpoint and token
       const response = await fetch('https://api.iex.cloud/v1/fx/latest?symbols=USDCAD,GBPUSD,USDJPY&token=pk_783dcc2169924a7a9f17a4b0b13bca6c');
       const data = await response.json();
       setForexRates(data);
     } catch (error) {
       console.error('Error fetching forex rates:', error);
+      setErrorForexRates('Error fetching forex rates. Please try again.');
+    } finally {
+      setLoadingForexRates(false);
     }
   };
 
@@ -87,7 +101,7 @@ const App = () => {
 
   return (
     <div className="app">
-<h1 style={{ textAlign: "center" }}>IPO DASHBOARD</h1>
+      <h1 style={{ textAlign: "center" }}>IPO DASHBOARD</h1>
       {user && (
         <header className="dashboard-header">
           <Container>
@@ -120,10 +134,11 @@ const App = () => {
               <div className="calendar-container">
                 <Calendar style={{ background: '#fff', color: 'red' }} />
               </div>
-              
             </div>
             <div className="ipo-list">
               <h2>Upcoming IPOs</h2>
+              {loadingIPO && <Spinner animation="border" role="status"><span className="sr-only">Loading IPOs...</span></Spinner>}
+              {errorIPO && <Alert variant="danger">{errorIPO}</Alert>}
               <div className="ipo-cards-container">
                 {ipoData.map((ipo) => (
                   <IPOCard key={ipo.symbol} ipo={ipo} onCardClick={handleCardClick} />
@@ -131,16 +146,12 @@ const App = () => {
               </div>
             </div>
             <div className="forex-rates">
-                
-                <ExchangeRatesTable rates={forexRates} />
-              </div>
+              <ExchangeRatesTable rates={forexRates} />
+            </div>
           </div>
         ) : (
           <div className="landing-page-container">
-            {/* <div className="login-container"> */}
-              
-              <Login onLogin={handleLogin} />
-            {/* </div> */}
+            <Login onLogin={handleLogin} />
             <div className="registration-container">
               <h2>Register</h2>
               {showRegister && <Registration onRegistration={handleRegistration} />}
